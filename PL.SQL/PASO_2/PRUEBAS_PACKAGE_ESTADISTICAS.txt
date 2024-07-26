@@ -1,0 +1,29 @@
+--PRUEBAS---
+
+BEGIN
+  EstadisticaIncidenciasTotal();
+END;
+/
+
+
+BEGIN
+  EstadisticaEquipajes();
+END;
+/
+
+
+BEGIN
+  BuscadorPersonal(NULL, NULL, NULL, NULL);
+END;
+/
+
+BEGIN
+  EstadisticaIncidenciasParam(1111);
+END;
+/
+
+
+BEGIN
+  EstadisticaIncidenciasTotal();
+END;
+/
