@@ -1,0 +1,77 @@
+
+
+
+
+-----------------PRUEBAS-------------
+--GRABAR--
+---llamada------
+
+
+DECLARE
+  v_tip_operariohipodromo       NUMBER;
+  v_tip_capatazhipodromo        NUMBER;
+  v_pausa                       VARCHAR2(20);
+  v_destinos_salida             VARCHAR2(50);
+  v_turno                       VARCHAR2(20);
+BEGIN
+  -- Establecer los valores de los parámetros
+  v_tip_operariohipodromo := 6666; 
+  v_tip_capatazhipodromo := 7777;  
+  v_pausa := '15 minutos';         
+  v_destinos_salida := 'mia';      
+  v_turno := 'Tarde';              
+  
+  -- Llamar al procedimiento con los parámetros
+  GRABAR(
+    p_tip_operariohipodromo => v_tip_operariohipodromo,
+    p_tip_capatazhipodromo => v_tip_capatazhipodromo,
+    p_pausa => v_pausa,
+    p_destinos_salida => v_destinos_salida,
+    p_turno => v_turno
+  );
+  
+  -- Imprimir un mensaje para confirmar que la operación se completó con éxito
+  DBMS_OUTPUT.PUT_LINE('El procedimiento se ejecutó con éxito.');
+  
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+/
+
+
+
+-----BORRAR------
+
+
+---PRUEBA----
+
+BEGIN
+  BORRAR(2222,2222);
+END;
+/
+
+
+----------CONSULTAR------------
+
+
+----prueba----
+
+
+BEGIN
+  CONSULTAR(6666);
+END;
+/
+
+
+
+--------MADRE------------
+
+---prueba----
+
+--SEGUN LA ORDEN QUE SE ESCRIBA SE EJECUTARA UN PROCEDIMIENTO O OTRO--
+
+BEGIN
+  MADRE('LECTURA', 3333, NULL, NULL, NULL, NULL);
+END;
+/
